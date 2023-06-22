@@ -1,0 +1,12 @@
+.nav {
+    background: #17cbb0;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav button {
+    background: #481cc2;
+    color: #fff;
+    padding: 5px;
+}
