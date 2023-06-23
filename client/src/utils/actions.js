@@ -7,3 +7,12 @@ export function attack (attacker, defender) {
     return damage;
 
 }
+
+export function heal (attacker) {
+    // 
+    const random = Math.floor(Math.random() * (10 - 5) + 5);
+    // let regen = Math.floor((attacker.attack / 2) + random);
+    let regen = 10;
+    return regen;
+}
+

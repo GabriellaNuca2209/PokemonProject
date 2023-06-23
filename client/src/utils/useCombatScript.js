@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { GameContext } from "./GameContext"
-import { attack } from "./actions";
+import { attack, heal } from "./actions";
 import { wait } from "./timer";
 
 export function useCombatScript(scriptInfo) {
@@ -26,6 +26,44 @@ export function useCombatScript(scriptInfo) {
                     (async () => {
                         setIsScriptRunning(true);
                         setCombatLog(`${attacker.name} is attacking!`);
+                        await wait(1000);
+                        // attack sound and animation
+                        turn === 0 ? setP2CurrentHp(health => (health - damage > 0 ? health - damage : 0)) 
+                                   : setP1CurrentHp(health => (health - damage > 0 ? health - damage : 0)) 
+                        await wait(1000);
+                        // defender sound and animation
+                        setCombatLog(`${defender.name} was hit!`);
+                        await wait(1000);
+                        setCombatLog(`It's ${defender.name}'s turn!`);
+                        await wait(1000);
+                        setTurn(turn === 0 ? 1 : 0);
+                        setIsScriptRunning(false);
+                        
+                    })()
+                    break;
+                }
+                case "heal": {
+                    let regen = heal(attacker);
+                    (async () => {
+                        setIsScriptRunning(true);
+                        setCombatLog(`Looks like ${attacker.name} is healing!!!!`);
+                        await wait(2000); 
+
+                        turn === 0 ? setP1CurrentHp(p1CurrentHp + regen <= game.player1.hp ? p1CurrentHp + regen : p1CurrentHp) 
+                                   : setP2CurrentHp(p2CurrentHp + regen <= game.player2.hp ? p2CurrentHp + regen : p2CurrentHp)
+                        await wait(2000);
+                        setCombatLog(`It's ${defender.name}'s turn!`);
+                        await wait(1000);
+                        setTurn(turn === 0 ? 1 : 0);
+                        setIsScriptRunning(false);
+                    })()
+                    break;
+                }
+                case "megaAttack": {
+                    let damage = 200;
+                    (async () => {
+                        setIsScriptRunning(true);
+                        setCombatLog(`${attacker.name} is powered up!`);
                         await wait(2000);
                         turn === 0 ? setP2CurrentHp(health => (health - damage > 0 ? health - damage : 0)) 
                                    : setP1CurrentHp(health => (health - damage > 0 ? health - damage : 0)) 
@@ -36,7 +74,7 @@ export function useCombatScript(scriptInfo) {
                         setIsScriptRunning(false);
                     })()
                     break;
-                } 
+                }
                 default: break;
             }
 

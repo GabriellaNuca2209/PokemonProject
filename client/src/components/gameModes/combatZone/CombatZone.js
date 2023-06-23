@@ -28,7 +28,7 @@ const CombatZone = () => {
             <div className="control-container">
                 <CombatControls setScriptInfo={setScriptInfo} turn={turn}/>
             </div>
-            <div>{combatLog}</div> 
+            <div>{combatLog || `${game.player1.name}, use thunder bolt!!`}</div> 
             {/* Combat Cards */}
             <div className="combat-cards-container">
                 <div className="player1">
