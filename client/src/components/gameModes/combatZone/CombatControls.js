@@ -1,7 +1,12 @@
-const CombatControls = () => {
+const CombatControls = ({ setScriptInfo, turn }) => {
+
+    function attack () {
+        setScriptInfo({turn, action: "attack"})
+    }
+
     return (  
         <div className="combat-btn">
-            <button>Attack</button>
+            <button onClick={attack}>Attack</button>
             <button>Heal</button>
         </div>
     );

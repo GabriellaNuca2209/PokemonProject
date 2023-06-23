@@ -33,8 +33,6 @@ const HeaderInGame = () => {
             <ActivePokemonImg/>
             <button onClick={openBackpack}>Backpack</button>
 
-            
-
         </div>
     );
 }
