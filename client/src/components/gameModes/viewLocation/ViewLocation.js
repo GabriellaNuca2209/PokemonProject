@@ -33,6 +33,11 @@ const ViewLocation = () => {
     }
     // console.log(areaData)
 
+    function startCombat() {
+        const random = Math.floor(Math.random() * game.pokemonsAtLocation.length);
+        game.setGameMode("combatZone");
+        game.setPlayer2(game.pokemonsAtLocation[random]);
+    }
 
     return (  
         <div>
@@ -41,8 +46,13 @@ const ViewLocation = () => {
                     <div>Hello, fellow adventurer!</div>
                     <button onClick={() => handleScouting()}>Scout Area</button>
                 </div>
-                : <div>
+                : 
+                <div>
                     <div>Looks like we found some life here!</div>
+                    {game.player1.name ? <button onClick={startCombat}>Start Combat</button>
+                                       : <div>Don't go alone!</div>
+                    }
+
                     {game.pokemonsAtLocation.map((scoutedPokemon, index) => (
                         <div key={index}>
                             <div>{scoutedPokemon.name}</div>

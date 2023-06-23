@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import "./header.css";
 import { GameContext } from "../../utils/GameContext";
+import HeaderInMenu from "./HeaderInMenu";
+import HeaderInGame from "./HeaderInGame";
 
 const Header = () => {
 
@@ -9,11 +11,11 @@ const Header = () => {
     return (  
         <div className="nav">
 
-            <button onClick={() => game.setGameMode("worldMap")}>Start Game</button>
-
+            {game.gameMode === "startMenu" ? <HeaderInMenu/> : <HeaderInGame/>}
+            
             
 
-            <button>Arena</button>
+            
 
         </div>
     );

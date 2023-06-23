@@ -1,8 +1,12 @@
 .nav {
     background: #17cbb0;
-    height: 50px;
+    height: 100px;
+}
+
+.header-game {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav button {
@@ -10,3 +14,4 @@
     color: #fff;
     padding: 5px;
 }
+

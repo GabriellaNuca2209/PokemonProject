@@ -3,6 +3,8 @@ import { GameContext } from "../utils/GameContext";
 import StartMenu from "./gameModes/StartMenu";
 import WorldMap from "./gameModes/WoldMap/WorldMap";
 import ViewLocation from "./gameModes/viewLocation/ViewLocation";
+import Backpack from "./backpack/Backpack";
+import CombatZone from "./gameModes/combatZone/CombatZone";
 
 const ModeControl = () => {
 
@@ -10,11 +12,12 @@ const ModeControl = () => {
 
 
     return (  
-        <div>
+        <div className="main-container">
             {game.gameMode === "startMenu" && <StartMenu/>}
             {game.gameMode === "worldMap" && <WorldMap/>}
             {game.gameMode === "viewLocation" && <ViewLocation/>}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quam eius vitae ut optio blanditiis? Illo, sed. Deserunt quasi recusandae rem quas accusantium aperiam tempora similique veniam, officiis optio ratione!
+            {game.gameMode === "combatZone" && <CombatZone/>}
+            {game.isBackpackOpen && <Backpack/>}
         </div>
     );
 }

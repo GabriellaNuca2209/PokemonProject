@@ -1,0 +1,38 @@
+.combat-cards-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.hp {
+    font-size: 40px;
+}
+
+.name {
+    font-size: 40px;
+}
+
+.player1 {
+    margin: 0px 300px;
+}
+
+.player2 {
+    margin: 0px 300px;
+}
+
+.pokemon-char img {
+    width: 400px;
+    height: 400px;
+    image-rendering: pixelated;
+}
+
+.pokemon-char {
+    border: 1px solid black;
+}
+
+.combat-btn button {
+    width: 100px;
+    height: 50px;
+}

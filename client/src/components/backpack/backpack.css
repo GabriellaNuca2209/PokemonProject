@@ -1,0 +1,29 @@
+.bp-container {
+    height: 100vh;
+    width: 400px;
+}
+
+.bp {
+   position: absolute;
+   top: 0;
+   right: 0;
+   
+}
+
+.main-container {
+    position: relative;
+}
+
+.pokemon-card {
+    border: 2px solid black;
+}
+
+.pokemon-card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0 2px #984f4f;
+}
+
+.pokemon-card:active {
+    position: relative;
+    top: 1px;
+}
