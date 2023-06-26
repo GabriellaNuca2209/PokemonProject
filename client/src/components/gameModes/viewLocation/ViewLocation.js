@@ -37,6 +37,7 @@ const ViewLocation = () => {
         const random = Math.floor(Math.random() * game.pokemonsAtLocation.length);
         game.setGameMode("combatZone");
         game.setPlayer2(game.pokemonsAtLocation[random]);
+        game.setIsBackpackOpen(false);
     }
 
     return (  

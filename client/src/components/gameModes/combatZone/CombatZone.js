@@ -5,6 +5,7 @@ import './combat.css';
 import CombatControls from "./CombatControls";
 import { useCombatScript } from "../../../utils/useCombatScript";
 import { useAiAction } from "../../../utils/useAiAction";
+import { wait } from "../../../utils/timer";
 
 const CombatZone = () => {
 
@@ -23,15 +24,21 @@ const CombatZone = () => {
     }, [turn, isScriptRunning, aiAction])
 
     useEffect(()=> {
-        if(p1CurrentHp === 0 ){
-            game.setGameMode("endCombat")
-            game.setLoser(game.player1)
-            game.setWinner(game.player2)
-        } else if (p2CurrentHp === 0) {
-            game.setGameMode("endCombat")
-            game.setLoser(game.player2)
-            game.setWinner(game.player1)
-            game.setBackpack((prev) => [...prev, game.player2])
+
+
+        if(p1CurrentHp === 0 || p2CurrentHp === 0){
+            (async ()=> {
+                await wait(2000);
+                if(p1CurrentHp === 0 ){
+                    game.setLoser(game.player1)
+                    game.setWinner(game.player2)
+                } else if (p2CurrentHp === 0) {
+                    game.setLoser(game.player2)
+                    game.setWinner(game.player1)
+                    game.setBackpack((prev) => [...prev, game.player2])
+                }
+                game.setGameMode("endCombat")
+            })()
         }
 
     }, [p1CurrentHp, p2CurrentHp])

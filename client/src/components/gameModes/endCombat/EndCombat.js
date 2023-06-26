@@ -3,7 +3,11 @@ import { GameContext } from "../../../utils/GameContext";
 
 const EndCombat = () => {
     const game = useContext(GameContext);
-    console.log(game.backpack);
+
+    function handleEndCombat(){
+        game.setGameMode("worldMap");
+        game.setIsExplored(false)
+    }
 
     return ( 
         <div className="endCombat-container">
@@ -14,6 +18,7 @@ const EndCombat = () => {
             <div className="loser-card">
                 Loser is {game.loser.name}
             </div>
+            <button onClick={handleEndCombat}>Return to map</button>
         </div>
      );
 }

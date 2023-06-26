@@ -9,8 +9,6 @@ const HeaderInMenu = () => {
     const starterOptions = ["pikachu", "bulbasaur", "squirtle"];
     const starterPokemons = [];
 
-
-
     for (let i = 0; i < starterOptions.length; i++) {
         fetch(`https://pokeapi.co/api/v2/pokemon/${starterOptions[i]}`)
         .then(res => res.json())
@@ -23,21 +21,11 @@ const HeaderInMenu = () => {
                 img: data.sprites.front_default
             })
         })
-
-        // let pokemonObj = {
-        //     name: data.name,
-        //     hp: data.stats[0].base_stat,
-        //     attack: data.stats[1].base_stat,
-        //     defense: data.stats[2].base_stat,
-        //     img: data.sprites.front_default
-        // }
-
-        // starterPokemons.push(pokemonObj)
     }
 
-    function GetPokemons(url, poke) {
-        return UseFetch(url + poke);
-    }
+    // function GetPokemons(url, poke) {
+    //     return UseFetch(url + poke);
+    // }
 
     function startGame() {
         game.setGameMode("worldMap")

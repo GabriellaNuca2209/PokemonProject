@@ -12,15 +12,18 @@ const HeaderInGame = () => {
     function returnToMap() {
         game.setGameMode("worldMap");
         game.setIsExplored(false);
+        game.setIsBackpackOpen(false)
     }
 
     function abandonRun() {
         game.setGameMode("startMenu");
         game.setIsExplored(false);
+        game.setIsBackpackOpen(false)
+        game.setPlayer1("")
+        game.setPlayer2("")
     }
 
     function openBackpack() {
-        console.log(game.backpack);
         game.setIsBackpackOpen(true);
     }
 
@@ -31,8 +34,8 @@ const HeaderInGame = () => {
             {game.gameMode === "combatZone" && <button onClick={returnToMap}>Flee Combat</button>}
             <div>Score</div>
             <ActivePokemonImg/>
-            <button onClick={openBackpack}>Backpack</button>
-
+            {game.gameMode === "worldMap" && <button onClick={openBackpack}>Backpack</button>}
+            {game.gameMode === "viewLocation" && <button onClick={openBackpack}>Backpack</button>}
         </div>
     );
 }

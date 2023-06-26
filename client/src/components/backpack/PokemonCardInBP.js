@@ -7,5 +7,5 @@ const PokemonCardInBP = ( { pokemon }) => {
         </div>
     );
 }
- 
+
 export default PokemonCardInBP;
