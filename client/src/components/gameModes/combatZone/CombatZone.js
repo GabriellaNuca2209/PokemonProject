@@ -53,21 +53,15 @@ const CombatZone = () => {
                     game.setWinner(game.player2)
                 } else if (p2CurrentHp <= 0) {
                     game.setLoser(game.player2)
-                    game.setWinner(game.player1)
-
-                    // await wait(300)
-                    // if(checkBackpack(game.backpack, game.player2) === false){
-                    //     game.setBackpack((prev) => [...prev, game.player2])
-                    // }
-                    game.setBackpack((prev) => [...prev, game.player2])
-                    
+                    game.setWinner(game.player1)  
+                    game.setIsPlayer1Winner(true);
                     game.setScore(game.score + game.player2.hp * 10)
                 }
                 game.setGameMode("endCombat")
             })()
         }
 
-    }, [p1CurrentHp, p2CurrentHp])
+    }, [game, p1CurrentHp, p2CurrentHp])
 
     return (  
         <div className="combatZone-container">

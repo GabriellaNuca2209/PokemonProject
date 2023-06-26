@@ -63,8 +63,8 @@ export function useCombatScript(scriptInfo) {
                         setCombatLog(`Looks like ${attacker.name} is healing!!!!`);
                         await wait(2000); 
 
-                        turn === 0 ? setP1CurrentHp(p1CurrentHp + regen <= game.player1.hp ? p1CurrentHp + regen : p1CurrentHp) 
-                                   : setP2CurrentHp(p2CurrentHp + regen <= game.player2.hp ? p2CurrentHp + regen : p2CurrentHp)
+                        turn === 0 ? setP1CurrentHp(health => (health + regen <= game.player1.hp ? health + regen : health)) 
+                                   : setP2CurrentHp(health => (health + regen <= game.player1.hp ? health + regen : health))
                         await wait(2000);
                         setCombatLog(`It's ${defender.name}'s turn!`);
                         await wait(1000);

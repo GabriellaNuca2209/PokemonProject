@@ -32,6 +32,9 @@ export const GameContext = createContext({
     setScore: () => {},
     isActionTaken: false,
     setIsActionTaken: ()=>{},
+
+    isPlayer1Winner: false,
+    setIsPlayer1Winner: () => {},
     // Sounds
     buttonSound: ()=> {},
 
@@ -55,6 +58,8 @@ export function GameContextProvider({ children }) {
     const [score, setScore] = useState(0)
     const [isActionTaken, setIsActionTaken] = useState("")
 
+    const [isPlayer1Winner, setIsPlayer1Winner] = useState(false);
+
 
     function buttonSound(string){
         let soundSource = "";
@@ -66,7 +71,7 @@ export function GameContextProvider({ children }) {
                 soundSource = selectPokemonSnd;
                 break;
             default: 
-                soundSource = defaultSnd;
+                soundSource = defaultClickSnd;
                 break;
         }
 
@@ -104,6 +109,9 @@ export function GameContextProvider({ children }) {
         setScore,
         isActionTaken: isActionTaken,
         setIsActionTaken,
+
+        isPlayer1Winner:isPlayer1Winner,
+        setIsPlayer1Winner,
         // Sound
         buttonSound,
     }
