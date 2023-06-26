@@ -22,13 +22,27 @@ const CombatZone = () => {
         }
     }, [turn, isScriptRunning, aiAction])
 
+    useEffect(()=> {
+        if(p1CurrentHp === 0 ){
+            game.setGameMode("endCombat")
+            game.setLoser(game.player1)
+            game.setWinner(game.player2)
+        } else if (p2CurrentHp === 0) {
+            game.setGameMode("endCombat")
+            game.setLoser(game.player2)
+            game.setWinner(game.player1)
+            game.setBackpack((prev) => [...prev, game.player2])
+        }
+
+    }, [p1CurrentHp, p2CurrentHp])
+
     return (  
         <div className="combatZone-container">
             {/* Combat Buttons */}
             <div className="control-container">
                 <CombatControls setScriptInfo={setScriptInfo} turn={turn}/>
             </div>
-            <div>{combatLog || `${game.player1.name}, use thunder bolt!!`}</div> 
+            <div>{combatLog || `${game.player1.name}, has the start`}</div> 
             {/* Combat Cards */}
             <div className="combat-cards-container">
                 <div className="player1">

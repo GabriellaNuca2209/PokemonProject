@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.intro-screen-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+.intro-background{
+    width: 100vw;
+    height: 100vh;
+    background: url("../../../assets/img/pokeBackground1.gif") no-repeat center / cover;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    image-rendering: pixelated;
+}
+
+.intro-msg{
+    font-size: 60px;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker{
+    50% {
+        opacity: 0;
+    }
+}

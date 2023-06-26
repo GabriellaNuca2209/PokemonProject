@@ -10,13 +10,7 @@ const Header = () => {
 
     return (  
         <div className="nav">
-
             {game.gameMode === "startMenu" ? <HeaderInMenu/> : <HeaderInGame/>}
-            
-            
-
-            
-
         </div>
     );
 }

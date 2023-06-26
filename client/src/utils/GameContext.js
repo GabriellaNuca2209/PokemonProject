@@ -20,12 +20,18 @@ export const GameContext = createContext({
     setPlayer1: () => {},
     player2: "",
     setPlayer2: () => {},
+
+    // Combat end
+    winner: "",
+    setWinner: ()=>{},
+    loser: "",
+    setLoser:()=> {},
 })
 
 
 export function GameContextProvider({ children }) {
 
-    const [gameMode, setGameMode] = useState("startMenu");
+    const [gameMode, setGameMode] = useState("introScreen");
     const [locationData, setLocationData] = useState({});
     const [pokemonsAtLocation, setPokemonsAtLocation] = useState([]);
     const [isExplored, setIsExplored] = useState(false);
@@ -33,6 +39,8 @@ export function GameContextProvider({ children }) {
     const [isBackpackOpen, setIsBackpackOpen] = useState(false);
     const [player1, setPlayer1] = useState("");
     const [player2, setPlayer2] = useState("");
+    const [winner, setWinner] = useState("")
+    const [loser, setLoser] = useState("")
 
     const contextValue = {
         gameMode: gameMode,
@@ -53,6 +61,10 @@ export function GameContextProvider({ children }) {
         setPlayer1,
         player2: player2,
         setPlayer2,
+        winner: winner,
+        setWinner,
+        loser: loser,
+        setLoser
     }
 
     return (

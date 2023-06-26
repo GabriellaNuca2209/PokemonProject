@@ -1,16 +1,16 @@
+import { useContext } from 'react';
 import './App.css';
 import ModeControl from './components/ModeControl';
 import Header from './components/header/Header';
-import { GameContextProvider } from './utils/GameContext';
+import { GameContext, GameContextProvider } from './utils/GameContext';
 
 function App() {
+  const game = useContext(GameContext)
   return (
-    <GameContextProvider>
       <div className="App">
-        <Header/>
+        {game.gameMode !== "introScreen"  && <Header/>}
         <ModeControl/>
       </div>
-    </GameContextProvider>
   );
 }
 
