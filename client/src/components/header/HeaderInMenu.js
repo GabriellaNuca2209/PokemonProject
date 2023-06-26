@@ -32,10 +32,14 @@ const HeaderInMenu = () => {
         game.setBackpack(starterPokemons);
     }
 
+    function startArena(){
+        game.buttonSound()
+    }
+
     return (  
         <div>
             <button onClick={startGame}>Start Game</button>
-            <button>Arena</button>
+            <button onClick={startArena}>Arena</button>
         </div>
     );
 }

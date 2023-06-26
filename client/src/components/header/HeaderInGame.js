@@ -7,8 +7,6 @@ const HeaderInGame = () => {
 
     const game = useContext(GameContext);
 
-    
-
     function returnToMap() {
         game.setGameMode("worldMap");
         game.setIsExplored(false);
@@ -25,6 +23,7 @@ const HeaderInGame = () => {
 
     function openBackpack() {
         game.setIsBackpackOpen(true);
+        game.buttonSound("backpack");
     }
 
     return (  
@@ -32,7 +31,7 @@ const HeaderInGame = () => {
             <button onClick={abandonRun}>Abandon Run</button>
             {game.gameMode === "viewLocation" && <button onClick={returnToMap}>Return to Map</button>}
             {game.gameMode === "combatZone" && <button onClick={returnToMap}>Flee Combat</button>}
-            <div>Score</div>
+            <div>Score: {game.score} </div>
             <ActivePokemonImg/>
             {game.gameMode === "worldMap" && <button onClick={openBackpack}>Backpack</button>}
             {game.gameMode === "viewLocation" && <button onClick={openBackpack}>Backpack</button>}

@@ -9,13 +9,19 @@ const Backpack = ( { setIsBackpackOpen }) => {
 
     function choosePokemon(pokemon) {
         game.setPlayer1(pokemon)
+        game.buttonSound("selectPokemon")
+    }
+
+    function handleClose(){
+        game.setIsBackpackOpen(false)
+        game.buttonSound("backpack")
     }
 
     return (  
         <div className="bp">
 
             <div className="bp-container">
-                <button onClick={()=> game.setIsBackpackOpen(false)}>Close</button>
+                <button onClick={handleClose}>Close</button>
 
             {game.backpack.map((pokemon, index) => (
                     <div className="pokemon-card" key={index} onClick={() => choosePokemon(pokemon)}>

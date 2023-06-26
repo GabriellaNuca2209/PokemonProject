@@ -4,13 +4,15 @@ import { GameContext } from '../../../utils/GameContext';
 const IntroScreen = () => {
 
     const game = useContext(GameContext)
-
-    onkeydown = _ => game.setGameMode("startMenu")
+    // if(game.gameMode === "introScreen"){
+    //     onkeydown = _ => game.setGameMode("startMenu")
+    // }
+    
     return ( 
         <div className="intro-screen-container">
             <div className="intro-background">
                 <div className="intro-msg">
-                    Press any key to start
+                    <button onClick={()=> game.setGameMode("startMenu")}>start game</button>
                 </div>
             </div>
         </div>

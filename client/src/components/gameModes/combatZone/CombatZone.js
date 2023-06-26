@@ -36,6 +36,7 @@ const CombatZone = () => {
                     game.setLoser(game.player2)
                     game.setWinner(game.player1)
                     game.setBackpack((prev) => [...prev, game.player2])
+                    game.setScore(game.score + game.player2.hp * 10)
                 }
                 game.setGameMode("endCombat")
             })()
