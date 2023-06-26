@@ -17,6 +17,25 @@ const CombatZone = () => {
 
     const aiAction = useAiAction(turn);
 
+    // function checkBackpack(backpack, pokemon){
+    //     let isIn = true
+    //     backpack.forEach(creature => {
+    //         if(creature.name === pokemon.name){
+    //             isIn = true;
+    //         }
+    //         isIn = false;
+    //     })
+    //     return isIn;
+    // }
+    // const isIn = game.backpack.some(poke => {
+    //     if(poke.name === game.player2.name){
+    //         console.log(poke.name);
+    //         console.log(game.player2.name);
+    //         return false
+    //     }
+    //     return true
+    // })
+
     useEffect(() => {
         if (turn === 1 && !isScriptRunning) {
             setScriptInfo({turn, action: aiAction});
@@ -35,7 +54,13 @@ const CombatZone = () => {
                 } else if (p2CurrentHp <= 0) {
                     game.setLoser(game.player2)
                     game.setWinner(game.player1)
+
+                    // await wait(300)
+                    // if(checkBackpack(game.backpack, game.player2) === false){
+                    //     game.setBackpack((prev) => [...prev, game.player2])
+                    // }
                     game.setBackpack((prev) => [...prev, game.player2])
+                    
                     game.setScore(game.score + game.player2.hp * 10)
                 }
                 game.setGameMode("endCombat")
