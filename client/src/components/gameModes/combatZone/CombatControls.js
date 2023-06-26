@@ -1,7 +1,13 @@
+import { useContext } from "react";
+import { GameContext } from "../../../utils/GameContext";
+
 const CombatControls = ({ setScriptInfo, turn }) => {
+
+    const game = useContext(GameContext)
 
     function attack () {
         setScriptInfo({turn, action: "attack"});
+        // game.setIsActionTaken(true)
     }
 
     function heal () {

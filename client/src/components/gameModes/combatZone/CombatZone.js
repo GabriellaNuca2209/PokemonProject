@@ -26,13 +26,13 @@ const CombatZone = () => {
     useEffect(()=> {
 
 
-        if(p1CurrentHp === 0 || p2CurrentHp === 0){
+        if(p1CurrentHp <= 0 || p2CurrentHp <= 0){
             (async ()=> {
                 await wait(2000);
-                if(p1CurrentHp === 0 ){
+                if(p1CurrentHp <= 0 ){
                     game.setLoser(game.player1)
                     game.setWinner(game.player2)
-                } else if (p2CurrentHp === 0) {
+                } else if (p2CurrentHp <= 0) {
                     game.setLoser(game.player2)
                     game.setWinner(game.player1)
                     game.setBackpack((prev) => [...prev, game.player2])
@@ -47,10 +47,8 @@ const CombatZone = () => {
     return (  
         <div className="combatZone-container">
             {/* Combat Buttons */}
-            <div className="control-container">
-                <CombatControls setScriptInfo={setScriptInfo} turn={turn}/>
-            </div>
-            <div>{combatLog || `${game.player1.name}, has the start`}</div> 
+
+            <div>{combatLog || `${game.player1.name}, has the start`}</div>
             {/* Combat Cards */}
             <div className="combat-cards-container">
                 <div className="player1">
@@ -60,8 +58,9 @@ const CombatZone = () => {
                     <CombatCard pokemon={game.player2} currentHp={p2CurrentHp}/>
                 </div>
             </div>
-
-            
+            <div className="control-container">
+                {<CombatControls setScriptInfo={setScriptInfo} turn={turn}/>}
+            </div>
         </div>
     );
 }

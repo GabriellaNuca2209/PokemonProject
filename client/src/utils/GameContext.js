@@ -23,16 +23,15 @@ export const GameContext = createContext({
     setPlayer1: () => {},
     player2: "",
     setPlayer2: () => {},
-
-    // Combat end
+    // Combat
     winner: "",
     setWinner: ()=>{},
     loser: "",
     setLoser:()=> {},
-
     score: 0, 
     setScore: () => {},
-
+    isActionTaken: false,
+    setIsActionTaken: ()=>{},
     // Sounds
     buttonSound: ()=> {},
 
@@ -54,6 +53,7 @@ export function GameContextProvider({ children }) {
     const [winner, setWinner] = useState("")
     const [loser, setLoser] = useState("")
     const [score, setScore] = useState(0)
+    const [isActionTaken, setIsActionTaken] = useState("")
 
 
     function buttonSound(string){
@@ -95,13 +95,15 @@ export function GameContextProvider({ children }) {
         setPlayer1,
         player2: player2,
         setPlayer2,
+        // Combat
         winner: winner,
         setWinner,
         loser: loser,
         setLoser,
         score: score,
         setScore,
-
+        isActionTaken: isActionTaken,
+        setIsActionTaken,
         // Sound
         buttonSound,
     }
