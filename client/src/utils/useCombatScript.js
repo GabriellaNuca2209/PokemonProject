@@ -43,7 +43,7 @@ export function useCombatScript(scriptInfo) {
                         await wait(1000);
                         // attack sound and animation
                         turn === 0 ? setP2CurrentHp(health => (health - damage > 0 ? health - damage : 0)) 
-                        : setP1CurrentHp(health => (health - damage > 0 ? health - damage : 0)) 
+                                   : setP1CurrentHp(health => (health - damage > 0 ? health - damage : 0)) 
                         creatureSound()
                         await wait(1000);
                         // defender sound and animation
@@ -63,8 +63,8 @@ export function useCombatScript(scriptInfo) {
                         setCombatLog(`Looks like ${attacker.name} is healing!!!!`);
                         await wait(2000); 
 
-                        turn === 0 ? setP1CurrentHp(health => (health + regen <= game.player1.hp ? health + regen : health)) 
-                                   : setP2CurrentHp(health => (health + regen <= game.player1.hp ? health + regen : health))
+                        turn === 0 ? setP1CurrentHp(health => (health + regen <= attacker.hp ? health + regen : attacker.hp)) 
+                                   : setP2CurrentHp(health => (health + regen <= attacker.hp ? health + regen : attacker.hp))
                         await wait(2000);
                         setCombatLog(`It's ${defender.name}'s turn!`);
                         await wait(1000);
