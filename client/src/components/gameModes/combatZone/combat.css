@@ -36,3 +36,15 @@
     width: 100px;
     height: 50px;
 }
+/* Combat animations */
+
+.idle {
+    transform: translateX(0px);
+    transform: translateY(0px);
+    transition: 0.5s;
+}
+
+.attack {
+    transition: 0.1s;
+    transform: translateX(100px);
+}

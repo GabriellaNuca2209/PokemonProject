@@ -39,8 +39,14 @@ export function useCombatScript(scriptInfo) {
                         setIsScriptRunning(true);
 
                         setCombatLog(`${attacker.name} is attacking!`);
+                        if(turn === 0){
+                            game.setPlayer1Animation('attack')
+                        }
                         creatureSound()
                         await wait(1000);
+                        if(turn === 0){
+                            game.setPlayer1Animation('idle')
+                        }
                         // attack sound and animation
                         turn === 0 ? setP2CurrentHp(health => (health - damage > 0 ? health - damage : 0)) 
                                    : setP1CurrentHp(health => (health - damage > 0 ? health - damage : 0)) 

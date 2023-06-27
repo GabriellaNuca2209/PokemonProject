@@ -38,6 +38,10 @@ export const GameContext = createContext({
     // Sounds
     buttonSound: ()=> {},
 
+    //animation
+    player1Animation: '',
+    setPlayer1Animation: () => {}
+
 })
 
 
@@ -59,6 +63,7 @@ export function GameContextProvider({ children }) {
     const [isActionTaken, setIsActionTaken] = useState("")
 
     const [isPlayer1Winner, setIsPlayer1Winner] = useState(false);
+    const [player1Animation, setPlayer1Animation] = useState('idle');
 
 
     function buttonSound(string){
@@ -114,6 +119,10 @@ export function GameContextProvider({ children }) {
         setIsPlayer1Winner,
         // Sound
         buttonSound,
+
+        //animation
+        player1Animation: player1Animation,
+        setPlayer1Animation
     }
 
     return (
