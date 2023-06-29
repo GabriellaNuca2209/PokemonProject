@@ -1,5 +1,5 @@
 .start-menu {
-    background-image: url('C:\Users\nucky\CodeCool\WEB\SW3\TW\gotta-fetch-em-all-react-GabriellaNuca2209\client\src\assets\img\bkg.jpg');
+    background: url('./img/bkg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
