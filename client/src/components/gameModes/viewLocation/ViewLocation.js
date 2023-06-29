@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import UseFetch from "../../../utils/useFetch";
 import { GameContext } from "../../../utils/GameContext";
+import './viewLocation.css';
 
 const ViewLocation = () => {
 
@@ -43,12 +44,20 @@ const ViewLocation = () => {
     return (  
         <div>
             {!game.isExplored 
-                ? <div>
-                    <div>Hello, fellow adventurer!</div>
-                    <button onClick={() => handleScouting()}>Scout Area</button>
+                ? <div className="non-explored">
+                    <div className="non-explored-container">
+                        <div className="text">Hello, fellow adventurer! <br/> What do we have here?</div>
+                        <div class="button2 v2" onClick={() => handleScouting()}>
+                            <span class="label">Scout Area</span>
+                                <span class="icon">
+                                    <span></span>
+                            </span>
+                        </div>
+                        {/* <button className="" onClick={() => handleScouting()}>Scout Area</button> */}
+                    </div>
                 </div>
                 : 
-                <div>
+                <div className="explored">
                     <div>Looks like we found some life here!</div>
                     {game.player1.name ? <button onClick={startCombat}>Start Combat</button>
                                        : <div>Don't go alone!</div>

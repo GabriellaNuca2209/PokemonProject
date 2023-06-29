@@ -1,13 +1,29 @@
 .bp-container {
-    height: 100vh;
+    height: 80vh;
     width: 400px;
+}
+
+.bp-container button {
+    padding: 0px 10px;
+    cursor: pointer;
+    font-size: 30px;
+    background: none;
+    border: none;
+    transition: .2s;
+}
+
+.bp-container button:hover {
+    font-size: 35px;
+}
+
+.close-container {
+    text-align: end;
 }
 
 .bp {
    position: absolute;
    top: 0;
-   right: 0;
-   
+   right: 5px;
 }
 
 .main-container {
@@ -15,12 +31,27 @@
 }
 
 .pokemon-card {
-    border: 2px solid black;
+    border: 1px solid #208bf0;
+    background-color: #151616;
+}
+
+.pokemon-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.pokemon-name {
+    font-size: 30px;
+    text-transform: capitalize;
+    color: #fff;
 }
 
 .pokemon-card:hover {
     cursor: pointer;
-    box-shadow: 0 0 0 2px #984f4f;
+    /* box-shadow: 0 0 0 2px #f0202f; */
+    border: 1px solid #f0202f;
 }
 
 .pokemon-card:active {

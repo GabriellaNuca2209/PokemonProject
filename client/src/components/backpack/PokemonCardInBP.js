@@ -1,9 +1,9 @@
 const PokemonCardInBP = ( { pokemon }) => {
 
     return (  
-        <div>
+        <div className="pokemon-container">
             <img src={pokemon.img} alt="pokemon" />
-            <div>{pokemon.name}</div>
+            <div className="pokemon-name">{pokemon.name}</div>
         </div>
     );
 }

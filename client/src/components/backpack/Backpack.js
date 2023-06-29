@@ -21,13 +21,18 @@ const Backpack = ( { setIsBackpackOpen }) => {
         <div className="bp">
 
             <div className="bp-container">
-                <button onClick={handleClose}>Close</button>
+                <div className="close-container">
+                    <button onClick={handleClose}><i class="fa-solid fa-xmark"></i></button>
+                </div>
 
-            {game.backpack.map((pokemon, index) => (
-                    <div className="pokemon-card" key={index} onClick={() => choosePokemon(pokemon)}>
-                        <PokemonCardInBP pokemon={pokemon}/>
-                    </div>
-            ))}
+                <div>
+                    {game.backpack.map((pokemon, index) => (
+                            <div className="pokemon-card" key={index} onClick={() => choosePokemon(pokemon)}>
+                                <PokemonCardInBP pokemon={pokemon}/>
+                            </div>
+                    ))}
+                </div>
+
             </div>
         </div>
     );
