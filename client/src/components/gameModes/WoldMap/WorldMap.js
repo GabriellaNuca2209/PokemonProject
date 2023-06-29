@@ -9,9 +9,9 @@ const WorldMap = () => {
     // console.log(locations);
 
     return (  
-        <div>
+        <div className="world-map">
             {locations && locations.results.map((location, index) => (
-                <div key={index}>
+                <div key={index} className={`${location.name}`}>
                     <Location location={location} locationId={index + 1}/>
                 </div>
             ))}

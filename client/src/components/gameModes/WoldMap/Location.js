@@ -15,7 +15,7 @@ const Location = ({location, locationId}) => {
 
     return (  
         <div>
-            <button onClick={() => locationChange()}>{location.name}</button>
+            <button className="loc" onClick={() => locationChange()}>{location.name}</button>
         </div>
     );
 }

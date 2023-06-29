@@ -1,0 +1,160 @@
+.world-map {
+    background: url('./img/world-map.jpg') no-repeat center / cover;
+    height: 855px;
+    position: relative;
+}
+
+.loc {
+	background:linear-gradient(to bottom, #8151e0 5%, #ed3d3d 100%);
+	background-color:#8151e0;
+	border-radius:28px;
+	border:1px solid #291c6e;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:5px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #662857;
+}
+.loc:hover {
+	background:linear-gradient(to bottom, #ed3d3d 5%, #8151e0 100%);
+	background-color:#ed3d3d;
+}
+.loc:active {
+	position:relative;
+	top:1px;
+}
+
+.canalave-city {
+    position: absolute;
+    left: 500px;
+    bottom: 350px;
+}
+
+.eterna-city {
+    position: absolute;
+    left: 800px;
+    bottom: 300px;
+}
+
+.pastoria-city {
+    position: absolute;
+    left: 530px;
+    top: 170px;
+}
+
+.sunyshore-city {
+    position: absolute;
+    left: 200px;
+    bottom: 100px;
+}
+
+.sinnoh-pokemon-league {
+    position: absolute;
+    right: 200px;
+    top: 310px;
+}
+
+.oreburgh-mine {
+    position: absolute;
+    right: 500px;
+    bottom: 250px;
+}
+
+.valley-windworks {
+    position: absolute;
+    right: 400px;
+    top: 250px;
+}
+
+.eterna-forest {
+    position: absolute;
+    left: 830px;
+    bottom: 130px;
+}
+
+.fuego-ironworks {
+    position: absolute;
+    right: 650px;
+    bottom: 270px;
+}
+
+.mt-coronet {
+    position: absolute;
+    left: 230px;
+    top: 150px;
+}
+
+.great-marsh {
+    position: absolute;
+    left: 30px;
+    top: 330px;
+}
+
+.solaceon-ruins {
+    position: absolute;
+    left: 330px;
+    top: 230px;
+}
+
+.sinnoh-victory-road {
+    position: absolute;
+    right: 200px;
+    top: 400px;
+}
+
+.ravaged-path {
+    position: absolute;
+    right: 530px;
+    bottom: 300px;
+}
+
+.oreburgh-gate {
+    position: absolute;
+    left: 680px;
+    top: 150px;
+}
+
+.stark-mountain {
+    position: absolute;
+    right: 750px;
+    top: 70px;
+}
+
+.spring-path {
+    position: absolute;
+    left: 330px;
+    top: 400px;
+}
+
+.turnback-cave {
+    position: absolute;
+    right: 530px;
+    top: 70px;
+}
+
+.snowpoint-temple {
+    position: absolute;
+    left: 880px;
+    top: 20px;
+}
+
+.wayward-cave {
+    position: absolute;
+    right: 200px;
+    top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

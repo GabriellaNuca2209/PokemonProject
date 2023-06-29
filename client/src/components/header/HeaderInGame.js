@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { GameContext } from "../../utils/GameContext";
 import ActivePokemonImg from "./ActivePokemonImg";
+import image from '../../assets/img/backpack.png';
 
 
 const HeaderInGame = () => {
@@ -28,13 +29,40 @@ const HeaderInGame = () => {
 
     return (  
         <div className="header-game">
-            <button onClick={abandonRun}>Abandon Run</button>
-            {game.gameMode === "viewLocation" && <button onClick={returnToMap}>Return to Map</button>}
-            {game.gameMode === "combatZone" && <button onClick={returnToMap}>Flee Combat</button>}
-            <div>Score: {game.score} </div>
-            <ActivePokemonImg/>
-            {game.gameMode === "worldMap" && <button onClick={openBackpack}>Backpack</button>}
-            {game.gameMode === "viewLocation" && <button onClick={openBackpack}>Backpack</button>}
+            <div class="button1 v1" onClick={abandonRun}>
+                <span class="label">Abandon Run</span>
+                    <span class="icon">
+                        <span></span>
+                </span>
+            </div>
+
+            {/* <button onClick={abandonRun}>Abandon Run</button> */}
+            {/* {game.gameMode === "viewLocation" && <button onClick={returnToMap}>Return to Map</button>}
+            {game.gameMode === "combatZone" && <button onClick={returnToMap}>Flee Combat</button>} */}
+            {game.gameMode === "viewLocation" && <div class="button1 v1" onClick={returnToMap}>
+                <span class="label">Return to Map</span>
+                    <span class="icon">
+                        <span></span>
+                </span>
+            </div>}
+            {game.gameMode === "combatZone" && <div class="button1 v1" onClick={returnToMap}>
+                <span class="label">Flee Combat</span>
+                    <span class="icon">
+                        <span></span>
+                </span>
+            </div>}
+
+            <div className="score-container">
+                <div className="score">Score: {game.score} </div>
+                <ActivePokemonImg/>
+            </div>
+
+            {game.gameMode === "worldMap" && <div className="backpack-container" onClick={openBackpack}>
+                                                    <img className="backpack-img" src={image} alt="backpack" />
+                                            </div>}
+            {game.gameMode === "viewLocation" && <div className="backpack-container" onClick={openBackpack}>
+                                                    <img className="backpack-img" src={image} alt="backpack" />
+                                                </div>}
         </div>
     );
 }
