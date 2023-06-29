@@ -12,7 +12,7 @@ const IntroScreen = () => {
         <div className="intro-screen-container">
             <div className="intro-background">
                 <div className="intro-msg">
-                    <button onClick={()=> game.setGameMode("startMenu")}>start game</button>
+                    <div className='start-msg' onClick={()=> game.setGameMode("startMenu")}>Press here to start</div>
                 </div>
             </div>
         </div>

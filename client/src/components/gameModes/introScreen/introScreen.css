@@ -28,6 +28,11 @@
     animation: blinker 1s linear infinite;
 }
 
+.start-msg {
+    cursor: pointer;
+    color: #fff;
+}
+
 @keyframes blinker{
     50% {
         opacity: 0;

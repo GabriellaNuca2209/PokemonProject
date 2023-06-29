@@ -1,8 +1,11 @@
+import HeaderInMenu from "../header/HeaderInMenu";
+import './startMenu.css';
+
 const StartMenu = () => {
     return (  
         <div className="start-menu">
-            <div className="high-scores">High Scores Lists</div>
-            Animated background
+            <HeaderInMenu/>
+            
         </div>
     );
 }

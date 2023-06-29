@@ -10,7 +10,8 @@ const Header = () => {
 
     return (  
         <div className="nav">
-            {game.gameMode === "startMenu" ? <HeaderInMenu/> : <HeaderInGame/>}
+            {/* {game.gameMode === "startMenu" ? <HeaderInMenu/> : <HeaderInGame/>} */}
+            {game.gameMode !== "startMenu" && <HeaderInGame/>}
         </div>
     );
 }
