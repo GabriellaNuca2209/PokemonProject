@@ -29,9 +29,9 @@ const HeaderInGame = () => {
 
     return (  
         <div className="header-game">
-            <div class="button1 v1" onClick={abandonRun}>
-                <span class="label">Abandon Run</span>
-                    <span class="icon">
+            <div className="button1 v1" onClick={abandonRun}>
+                <span className="label">Abandon Run</span>
+                    <span className="icon">
                         <span></span>
                 </span>
             </div>
@@ -39,15 +39,15 @@ const HeaderInGame = () => {
             {/* <button onClick={abandonRun}>Abandon Run</button> */}
             {/* {game.gameMode === "viewLocation" && <button onClick={returnToMap}>Return to Map</button>}
             {game.gameMode === "combatZone" && <button onClick={returnToMap}>Flee Combat</button>} */}
-            {game.gameMode === "viewLocation" && <div class="button1 v1" onClick={returnToMap}>
-                <span class="label">Return to Map</span>
-                    <span class="icon">
+            {game.gameMode === "viewLocation" && <div className="button1 v1" onClick={returnToMap}>
+                <span className="label">Return to Map</span>
+                    <span className="icon">
                         <span></span>
                 </span>
             </div>}
-            {game.gameMode === "combatZone" && <div class="button1 v1" onClick={returnToMap}>
-                <span class="label">Flee Combat</span>
-                    <span class="icon">
+            {game.gameMode === "combatZone" && <div className="button1 v1" onClick={returnToMap}>
+                <span className="label">Flee Combat</span>
+                    <span className="icon">
                         <span></span>
                 </span>
             </div>}

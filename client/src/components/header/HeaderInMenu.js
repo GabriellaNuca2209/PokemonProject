@@ -43,30 +43,30 @@ const HeaderInMenu = () => {
             <button>Options</button>
             <button>Quit</button> */}
 
-            <div class="button v8" onClick={startGame}>
-                <span class="label" >Start Game</span>
-                    <span class="icon">
+            <div className="button v8" onClick={startGame}>
+                <span className="label" >Start Game</span>
+                    <span className="icon">
                         <span></span>
                 </span>
             </div>
 
-            <div class="button v8" onClick={startArena}>
-                <span class="label" >Arena</span>
-                    <span class="icon">
+            <div className="button v8" onClick={startArena}>
+                <span className="label" >Arena</span>
+                    <span className="icon">
                         <span></span>
                 </span>
             </div>
 
-            <div class="button v8">
-                <span class="label">Options</span>
-                    <span class="icon">
+            <div className="button v8">
+                <span className="label">Options</span>
+                    <span className="icon">
                         <span></span>
                 </span>
             </div>
 
-            <div class="button v8">
-                <span class="label">Quit</span>
-                    <span class="icon">
+            <div className="button v8">
+                <span className="label">Quit</span>
+                    <span className="icon">
                         <span></span>
                 </span>
             </div>
