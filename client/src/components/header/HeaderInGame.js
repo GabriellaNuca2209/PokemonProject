@@ -23,7 +23,7 @@ const HeaderInGame = () => {
     }
 
     function openBackpack() {
-        game.setIsBackpackOpen(true);
+        game.setIsBackpackOpen(current => !current);
         game.buttonSound("backpack");
     }
 
