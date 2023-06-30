@@ -37,16 +37,12 @@ export function useCombatScript(scriptInfo) {
                     let damage = attack(attacker, defender);
                     (async () => {
                         setIsScriptRunning(true);
-
                         setCombatLog(`${attacker.name} is attacking!`);
-                        if(turn === 0){
-                            game.setPlayer1Animation('attack')
-                        }
+                        turn === 0 ? game.setPlayer1Animation('p1Attack') : game.setPlayer2Animation('p2Attack')
                         creatureSound()
                         await wait(1000);
-                        if(turn === 0){
-                            game.setPlayer1Animation('idle')
-                        }
+                        turn === 0 ? game.setPlayer2Animation('hit') : game.setPlayer1Animation('hit')
+                        turn === 0 ? game.setPlayer1Animation('idle') : game.setPlayer2Animation('idle')
                         // attack sound and animation
                         turn === 0 ? setP2CurrentHp(health => (health - damage > 0 ? health - damage : 0)) 
                                    : setP1CurrentHp(health => (health - damage > 0 ? health - damage : 0)) 
@@ -67,8 +63,9 @@ export function useCombatScript(scriptInfo) {
                     (async () => {
                         setIsScriptRunning(true);
                         setCombatLog(`Looks like ${attacker.name} is healing!!!!`);
+                        turn === 0 ? game.setPlayer1Animation('heal') : game.setPlayer2Animation('heal')
                         await wait(2000); 
-
+                        turn === 0 ? game.setPlayer1Animation('idle') : game.setPlayer2Animation('idle')
                         turn === 0 ? setP1CurrentHp(health => (health + regen <= attacker.hp ? health + regen : attacker.hp)) 
                                    : setP2CurrentHp(health => (health + regen <= attacker.hp ? health + regen : attacker.hp))
                         await wait(2000);

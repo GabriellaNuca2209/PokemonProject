@@ -44,7 +44,35 @@
     transition: 0.5s;
 }
 
-.attack {
+.p1Attack {
     transition: 0.1s;
     transform: translateX(100px);
+}
+
+.p2Attack {
+    transition: 0.1s;
+    transform: translateX(-100px);
+}
+
+
+.hit{
+    animation: blink-animation .5s  ;
+    -webkit-animation: blink-animation .5s  ;
+}
+@keyframes blink-animation {
+    to {
+        /* visibility: hidden; */
+        opacity: 50%;
+    }
+}
+@-webkit-keyframes blink-animation{
+    to {
+        /* visibility: hidden; */
+        opacity: 50%;
+    }
+}
+
+.heal{
+    scale: 1.5;
+    transition: .5s;
 }

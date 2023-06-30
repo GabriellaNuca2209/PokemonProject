@@ -71,13 +71,15 @@ const CombatZone = () => {
             {/* Combat Cards */}
             <div className="combat-cards-container">
                 <div className="player1">
-                    <div className={game.player1Animation}>
-                        <CombatCard pokemon={game.player1} currentHp={p1CurrentHp}/>
+                    <div>
+                        <CombatCard pokemon={game.player1} currentHp={p1CurrentHp} animation={game.player1Animation}/>
                     </div>
                     
                 </div>
-                <div className="player2">                    
-                    <CombatCard pokemon={game.player2} currentHp={p2CurrentHp}/>
+                <div className="player2">
+                    <div>                    
+                        <CombatCard pokemon={game.player2} currentHp={p2CurrentHp} animation={game.player2Animation}/>
+                    </div>
                 </div>
             </div>
             <div className="control-container">

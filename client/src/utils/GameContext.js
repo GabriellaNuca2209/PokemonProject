@@ -40,7 +40,9 @@ export const GameContext = createContext({
 
     //animation
     player1Animation: '',
-    setPlayer1Animation: () => {}
+    setPlayer1Animation: () => {},
+    player2Animation: '',
+    setPlayer2Animation: () => {}
 
 })
 
@@ -63,7 +65,8 @@ export function GameContextProvider({ children }) {
     const [isActionTaken, setIsActionTaken] = useState("")
 
     const [isPlayer1Winner, setIsPlayer1Winner] = useState(false);
-    const [player1Animation, setPlayer1Animation] = useState('idle');
+    const [player1Animation, setPlayer1Animation] = useState('p1Idle');
+    const [player2Animation, setPlayer2Animation] = useState('p2Idle');
 
 
     function buttonSound(string){
@@ -122,7 +125,10 @@ export function GameContextProvider({ children }) {
 
         //animation
         player1Animation: player1Animation,
-        setPlayer1Animation
+        setPlayer1Animation,
+        player2Animation: player2Animation,
+        setPlayer2Animation
+
     }
 
     return (
