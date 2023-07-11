@@ -17,25 +17,6 @@ const CombatZone = () => {
 
     const aiAction = useAiAction(turn);
 
-    // function checkBackpack(backpack, pokemon){
-    //     let isIn = true
-    //     backpack.forEach(creature => {
-    //         if(creature.name === pokemon.name){
-    //             isIn = true;
-    //         }
-    //         isIn = false;
-    //     })
-    //     return isIn;
-    // }
-    // const isIn = game.backpack.some(poke => {
-    //     if(poke.name === game.player2.name){
-    //         console.log(poke.name);
-    //         console.log(game.player2.name);
-    //         return false
-    //     }
-    //     return true
-    // })
-
     useEffect(() => {
         if (turn === 1 && !isScriptRunning) {
             setScriptInfo({turn, action: aiAction});
@@ -67,7 +48,9 @@ const CombatZone = () => {
         <div className="combatZone-container">
             {/* Combat Buttons */}
 
-            <div>{combatLog || `${game.player1.name}, has the start`}</div>
+            <div className="combat-log-container">
+                <div className="combat-log">{combatLog || `${game.player1.name} starts!`}</div>
+            </div>
             {/* Combat Cards */}
             <div className="combat-cards-container">
                 <div className="player1">

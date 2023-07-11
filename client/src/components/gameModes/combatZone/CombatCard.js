@@ -9,7 +9,7 @@ const CombatCard = ({ pokemon, currentHp, animation }) => {
             <HealthBar maxHp={hp} currentHp={currentHp}/>
             <div className="name">{name}</div>
             <img className={animation} src={img} alt="pokemon" />
-            <div className="hp">{Math.round(currentHp)}/{hp}</div>
+            {/* <div className="hp">{Math.round(currentHp)}/{hp}</div> */}
         </div>
     );
 }

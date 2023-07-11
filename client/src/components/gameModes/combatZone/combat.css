@@ -1,9 +1,30 @@
 .combat-cards-container {
-    height: 80vh;
+    height: 74vh;
     display: flex;
     justify-content: center;
     align-items: center;
     
+}
+
+.combatZone-container {
+    background: url(./img/combat-bkg.png) no-repeat center / cover;
+    padding: 8px;
+}
+
+.combat-log-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.combat-log {
+    text-transform: capitalize;
+    background: #202020;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    padding: 20px;
+    color: #fff;
 }
 
 .hp {
@@ -33,9 +54,13 @@
 }
 
 .combat-btn button {
-    width: 100px;
+    width: 50px;
     height: 50px;
+    border: none;
+    background: #202020;
+    border-radius: 50%;
 }
+
 /* Combat animations */
 
 .idle {

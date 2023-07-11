@@ -109,3 +109,58 @@
     right: 0;
     bottom: 0;
 }
+
+.explored {
+    background: url('./img/scout-bkg.jpg') no-repeat center / cover;
+    
+}
+
+.explored-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.some-text {
+    font-size: 20px;
+    color: #fff;
+    background: #161616;
+    padding: 20px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+}
+
+.explored-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.explored-poke-container {
+    display: grid;
+    grid-template-columns: repeat(4,2fr);
+    grid-row: 1fr;
+}
+
+.tastyPoke-img {
+    width: 300px;
+    image-rendering: pixelated;
+
+}
+
+.tastyPoke-name {
+    font-size: 20px;
+}
+
+.poke-container {
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+    margin: 40px;
+    background: rgba(0, 0, 0, .65);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+

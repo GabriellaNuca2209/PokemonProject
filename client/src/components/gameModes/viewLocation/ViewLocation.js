@@ -53,22 +53,33 @@ const ViewLocation = () => {
                                     <span></span>
                             </span>
                         </div>
-                        {/* <button className="" onClick={() => handleScouting()}>Scout Area</button> */}
                     </div>
                 </div>
                 : 
                 <div className="explored">
-                    <div>Looks like we found some life here!</div>
-                    {game.player1.name ? <button onClick={startCombat}>Start Combat</button>
-                                       : <div>Don't go alone!</div>
-                    }
+                    <div className="explored-text">
+                        <div className="some-text">Looks like we found some life!</div>
+                        {game.player1.name ? <div class="button2 v2 b" onClick={() => startCombat()}>
+                                                <span class="label">Start Combat</span>
+                                                    <span class="icon">
+                                                        <span></span>
+                                                </span>
+                                            </div>
+                                        : <div className="some-text">Don't go alone!</div>   
+                        }
+                    </div>
 
-                    {game.pokemonsAtLocation.map((scoutedPokemon, index) => (
-                        <div key={index}>
-                            <div>{scoutedPokemon.name}</div>
-                            <img src={scoutedPokemon.img} alt="tasyPokemon" />
+                    <div className="explored-container">
+                        <div className="explored-poke-container">
+                            {game.pokemonsAtLocation.map((scoutedPokemon, index) => (
+                                <div className="poke-container" key={index}>
+                                    <img src={scoutedPokemon.img} alt="tastyPokemon" className="tastyPoke-img"/>
+                                    <div className="tastyPoke-name">{scoutedPokemon.name}</div>
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
+
 
                 </div>
             }
