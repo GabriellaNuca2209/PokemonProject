@@ -1,5 +1,11 @@
+import { useContext } from 'react';
 import './healthBar.css';
+import { GameContext } from '../../../../utils/GameContext';
 const HealthBar = ({ maxHp, currentHp }) => {
+
+    // "hp-current"
+
+    const game = useContext(GameContext);
     return (  
         <div className="hp-container">
             <div className="hp-max">

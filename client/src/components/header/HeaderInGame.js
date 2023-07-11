@@ -36,9 +36,6 @@ const HeaderInGame = () => {
                 </span>
             </div>
 
-            {/* <button onClick={abandonRun}>Abandon Run</button> */}
-            {/* {game.gameMode === "viewLocation" && <button onClick={returnToMap}>Return to Map</button>}
-            {game.gameMode === "combatZone" && <button onClick={returnToMap}>Flee Combat</button>} */}
             {game.gameMode === "viewLocation" && <div className="button1 v1" onClick={returnToMap}>
                 <span className="label">Return to Map</span>
                     <span className="icon">

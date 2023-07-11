@@ -1,5 +1,5 @@
 .combat-cards-container {
-    height: 74vh;
+    height: 79vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,6 +9,7 @@
 .combatZone-container {
     background: url(./img/combat-bkg.png) no-repeat center / cover;
     padding: 8px;
+    position: relative;
 }
 
 .combat-log-container {
@@ -33,14 +34,17 @@
 
 .name {
     font-size: 40px;
+    text-transform: capitalize;
 }
 
 .player1 {
-    margin: 0px 300px;
+    margin: 0px 50px;
+    /* margin-left: 400px; */
 }
 
 .player2 {
-    margin: 0px 300px;
+    margin: 0px 50px;
+    /* margin-right: 400px; */
 }
 
 .pokemon-char img {
@@ -50,16 +54,79 @@
 }
 
 .pokemon-char {
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    text-align: center;
+}
+
+.combat-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .combat-btn button {
-    width: 50px;
-    height: 50px;
+    margin: 0px 20px;
+    padding: 5px;
     border: none;
-    background: #202020;
+    background: #bdffff;
     border-radius: 50%;
+    cursor: pointer;
+    transition: .2s;
 }
+
+.attack-btn {
+    position: absolute;
+    left: 60px;
+    bottom: 60px;
+    width: 100px;
+    height: 100px;
+}
+
+.mega-attack-btn {
+    position: absolute;
+    left: 50px;
+    bottom: 170px;
+    width: 60px;
+    height: 60px;
+}
+
+.heal-btn {
+    position: absolute;
+    left: 175px;
+    bottom: 40px;
+    width: 60px;
+    height: 60px;
+}
+
+.skull-btn {
+    position: absolute;
+    left: 250px;
+    bottom: 40px;
+    width: 60px;
+    height: 60px;
+}
+
+.attack-btn img {
+    width: 70px;
+}
+
+.heal-btn img {
+    width: 40px;
+}
+
+.mega-attack-btn img {
+    width: 40px;
+}
+
+.skull-btn img {
+    width: 40px;
+}
+
+
+.combat-btn button:hover {
+    background: #5bfcfc;
+}
+
 
 /* Combat animations */
 

@@ -6,8 +6,8 @@ const CombatCard = ({ pokemon, currentHp, animation }) => {
 
     return (  
         <div className="pokemon-char">
-            <HealthBar maxHp={hp} currentHp={currentHp}/>
             <div className="name">{name}</div>
+            <HealthBar maxHp={hp} currentHp={currentHp}/>
             <img className={animation} src={img} alt="pokemon" />
             {/* <div className="hp">{Math.round(currentHp)}/{hp}</div> */}
         </div>

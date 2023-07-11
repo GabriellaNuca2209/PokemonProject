@@ -20,3 +20,9 @@
     background-color: #0566fa;
     transition: 0.35s;
 }
+
+.hp-enemy {
+    height: 100%;
+    background-color: #fa0505;
+    transition: 0.35s;
+}
