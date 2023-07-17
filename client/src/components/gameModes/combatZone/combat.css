@@ -35,6 +35,9 @@
 .name {
     font-size: 40px;
     text-transform: capitalize;
+    background: rgba(0, 0, 0, .3);
+    color: #5bfcfc;
+    border-radius: 10px;
 }
 
 .player1 {
