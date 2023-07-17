@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { GameContext } from "../../../utils/GameContext";
 
-const Victory = ({winner, loser}) => {
+const Victory = ({winner, loser, handleEndCombat}) => {
 
     const game = useContext(GameContext); 
     let isNew = false;
@@ -28,16 +28,38 @@ const Victory = ({winner, loser}) => {
 
 
     return ( 
-        <div>
-            <div>Glorious Victory!!!</div>
-            {isNew && <div>
-                        <button onClick={capturePokemon}>Let's add it to our collection</button>
-                     </div>}
+        <div className="victory-container">
+            {/* <div className="victory-title">Glorious Victory!!!</div> */}
+
+            <div className="victory-pokemons">
+
+                <div className="return-btn option">
+                    {/* <button onClick={handleEndCombat}>Return To Map</button> */}
+                    <img src="./img/map.png" alt="map" height="100px"/>
+                </div>
+
+                <div className="winner-poke">
+                    <div>{winner.name} has won!</div>
+                    <img src={winner.img} alt="winner" className="winner-poke-img"/>
+                </div>
+
+                <div className="loser-poke">
+
+
+                    <div>{loser.name} fainted!</div>
+                    {/* <div className="dizzy-gif"></div> */}
+                    {/* <img src="../../../assets/img/endCombat/dizzy.gif" alt="dizzy" height="100px"/> */}
+                    <img src={loser.img} alt="loser" className="loser-poke-img"/>
+                </div>
+
+                <div className="capture-btn option">
+                    {isNew &&   <div>
+                                    {/* <button onClick={capturePokemon}>Add</button> */}
+                                    <img src="../../../assets/img/endCombat/pokeBall.png" alt="poke-ball" height="100px"/>
+                                </div>}
+                </div>
+            </div>
             
-            <div>{winner.name} has won!</div>
-            <img src={winner.img} alt="winner" />
-            <div>{loser.name} fainted!</div>
-            <img src={loser.img} alt="loser" />
 
         </div>
      );

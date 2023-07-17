@@ -1,0 +1,52 @@
+/* background: url(./img/combat-bkg.png) no-repeat center / cover; */
+
+.endCombat-container {
+    background: url(../../../assets/img/endCombat/combat-bkg.png) no-repeat center / cover;
+    min-height: 92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.victory-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.victory-pokemons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.winner-poke,
+.loser-poke {
+    border: 3px solid red;
+}
+
+.winner-poke-img {
+    /* scale: 7; */
+    width: 400px;
+    height: 400px;
+    image-rendering: pixelated;
+}
+
+.loser-poke-img {
+    /* scale: 3; */
+    width: 400px;
+    height: 400px;
+    image-rendering: pixelated;
+}
+
+.dizzy-gif {
+    background: url(../../../assets/img/endCombat/dizzy.gif);
+    height: 20px;
+    width: 20px;
+    z-index: 1;
+}
+
+.return-btn,
+.winner-poke,
+.loser-poke {
+    margin: 0px 100px;
+}

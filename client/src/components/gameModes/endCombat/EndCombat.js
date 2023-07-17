@@ -1,5 +1,6 @@
 import { useContext} from "react";
 import { GameContext } from "../../../utils/GameContext";
+import './endCombat.css';
 import Victory from "./Victory";
 import Defeat from "./Defeat";
 
@@ -14,14 +15,13 @@ const EndCombat = () => {
 
     return ( 
         <div className="endCombat-container">
-            Combat Results
             <div>
-                {game.isPlayer1Winner && <Victory winner={game.winner} loser={game.loser}/>}
+                {game.isPlayer1Winner && <Victory winner={game.winner} loser={game.loser} handleEndCombat={handleEndCombat}/>}
             </div>
+
             <div>
-                {!game.isPlayer1Winner && <Defeat winner={game.winner} loser={game.loser}/>}
+                {!game.isPlayer1Winner && <Defeat winner={game.winner} loser={game.loser} handleEndCombat={handleEndCombat}/>}
             </div>
-            <button onClick={handleEndCombat}>Return to map</button>
         </div>
      );
 }
