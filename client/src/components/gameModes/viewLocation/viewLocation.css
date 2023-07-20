@@ -28,7 +28,7 @@
     text-transform: uppercase;
     text-align: center;
     margin: 20px 0px;
-    color: #fff;
+    color: #ffffff;
     cursor: pointer;
     width: 200px;
     height: auto;
@@ -36,7 +36,8 @@
 
 .button2 .label {
     padding: 10px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     font-size: 20px;
 }
 
@@ -110,9 +111,16 @@
     bottom: 0;
 }
 
+.text-in-span {
+    color: #fff;
+    text-shadow: 3px 0px 7px rgba(100, 45, 22, 0.9), 
+      -3px 0px 7px rgba(100, 45, 22, 0.9), 
+      0px 4px 7px rgba(100, 45, 22, 0.9);
+}
+
 .explored {
     background: url('./img/scout-bkg.jpg') no-repeat center / cover;
-    
+    min-height: 855px;
 }
 
 .explored-text {

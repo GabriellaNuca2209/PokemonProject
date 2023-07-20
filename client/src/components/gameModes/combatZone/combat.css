@@ -71,10 +71,16 @@
     margin: 0px 20px;
     padding: 5px;
     border: none;
+    border: 5px solid #5bfcfc;
     background: #bdffff;
     border-radius: 50%;
     cursor: pointer;
     transition: .2s;
+}
+
+.combat-btn button:hover {
+    scale: 1.2;
+    border: 5px solid #bdffff;
 }
 
 .attack-btn {

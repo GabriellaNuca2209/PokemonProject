@@ -60,7 +60,7 @@ const ViewLocation = () => {
                     <div className="explored-text">
                         <div className="some-text">Looks like we found some life!</div>
                         {game.player1.name ? <div class="button2 v2 b" onClick={() => startCombat()}>
-                                                <span class="label">Start Combat</span>
+                                                <span class="label"><div className="text-in-span">Start Combat</div></span>
                                                     <span class="icon">
                                                         <span></span>
                                                 </span>
