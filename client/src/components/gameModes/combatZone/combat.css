@@ -1,5 +1,5 @@
 .combat-cards-container {
-    height: 79vh;
+    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,8 @@
 
 .combatZone-container {
     background: url(./img/combat-bkg.png) no-repeat center / cover;
-    padding: 8px;
+    height: 100vh;
+    /* padding: 8px; */
     position: relative;
 }
 
@@ -17,6 +18,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+    padding-top: 80px;
 }
 
 .combat-log {

@@ -1,5 +1,5 @@
 .bp-container {
-    height: 80vh;
+    height: 100vh;
     width: 400px;
 }
 
@@ -24,6 +24,7 @@
    position: absolute;
    top: 0;
    right: 5px;
+   margin-top: 70px;
 }
 
 .main-container {

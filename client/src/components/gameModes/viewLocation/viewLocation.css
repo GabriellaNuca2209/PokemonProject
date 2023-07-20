@@ -1,6 +1,6 @@
 .non-explored {
     background: url('./img/area_bkg.png') no-repeat center / cover;
-    height: 855px;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,7 +120,7 @@
 
 .explored {
     background: url('./img/scout-bkg.jpg') no-repeat center / cover;
-    min-height: 855px;
+    min-height: 100vh;
 }
 
 .explored-text {
@@ -128,6 +128,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
+    padding-top: 80px;
 }
 
 .some-text {

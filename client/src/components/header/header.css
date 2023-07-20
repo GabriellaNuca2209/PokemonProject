@@ -1,5 +1,8 @@
 .nav {
     background: #151616;
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
     
     /* display: flex;
     justify-content: center;
