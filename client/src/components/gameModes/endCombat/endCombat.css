@@ -2,7 +2,7 @@
 
 .endCombat-container {
     background: url(../../../assets/img/endCombat/combat-bkg.png) no-repeat center / cover;
-    min-height: 92vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
