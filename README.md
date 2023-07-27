@@ -1,1 +1,5 @@
-No starter code is provided. Start from scratch!
+# Pokemon Game
+
+## This project is based on learning React.js
+
+## Using pokemon API you have a variety of pokemons to find. Also, you can battle, collect pokemons and reavh for the highest score!
